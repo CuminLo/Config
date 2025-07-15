@@ -1,0 +1,9 @@
+{
+  "editor.wordWrap": "on",
+  "redhat.telemetry.enabled": true,
+  "files.autoSave": "onFocusChange",
+  "editor.fontSize": 14,
+  "workbench.editor.wrapTabs": true,
+  "editor.fontFamily": "'JetBrainsMono Nerd Font', 'JetBrains Maple Mono', 'JetBrains Mono', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+}
