@@ -58,7 +58,7 @@ install_brew() {
 install_software() {
   local software_list=("$@")
   for software in "${software_list[@]}"; do
-    if brew list --formula | grep -q "^${software}\$"; then
+    if brew list | grep -q "^${software}\$"; then
       info "$software 已安装。"
     else
       info "正在安装 $software..."
@@ -71,20 +71,20 @@ install_software() {
 }
 
 # 安装图形界面应用（cask）
-install_cask_software() {
-  local cask_list=("$@")
-  for cask in "${cask_list[@]}"; do
-    if brew list --cask | grep -q "^${cask}\$"; then
-      info "$cask 已安装。"
-    else
-      info "正在安装 $cask..."
-      brew install --cask "$cask"
-      if [ $? -ne 0 ]; then
-        warn "安装 $cask 失败，继续安装下一个软件。"
-      fi
-    fi
-  done
-}
+# install_cask_software() {
+#   local cask_list=("$@")
+#   for cask in "${cask_list[@]}"; do
+#     if brew list --cask | grep -q "^${cask}\$"; then
+#       info "$cask 已安装。"
+#     else
+#       info "正在安装 $cask..."
+#       brew install --cask "$cask"
+#       if [ $? -ne 0 ]; then
+#         warn "安装 $cask 失败，继续安装下一个软件。"
+#       fi
+#     fi
+#   done
+# }
 
 # 设置 zsh 和安装 zinit
 setup_zsh() {
@@ -123,6 +123,32 @@ setup_zsh() {
   fi
 }
 
+setup_rime() {
+  local target_dir="$HOME/Library/Rime"
+  
+  if [ -d "$target_dir" ]; then
+    info "检测到 Rime 目录已存在，将克隆到 $target_dir.new"
+    
+    # 处理 .new 目录已存在的情况
+    local new_dir="$target_dir.new"
+    if [ -d "$new_dir" ]; then
+      info "发现已存在的 .new 目录，正在清理..."
+      rm -rf "$new_dir"
+    fi
+    
+    git clone https://github.com/iDvel/rime-ice.git "$new_dir" --depth 1
+  else
+    info "正在 clone rime-ice..."
+    git clone https://github.com/iDvel/rime-ice.git "$target_dir" --depth 1
+  fi
+
+  local pack={
+    "squirrel-app"
+  }
+
+  install_software "${pack[@]}"
+}
+
 # 主函数
 main() {
   # 延长 sudo 会话以避免多次提示（尽管 chsh 不需要 sudo）
@@ -133,7 +159,7 @@ main() {
 
   # 更新 Homebrew 以确保获取最新的软件包定义
   info "正在更新 Homebrew..."
-  boom update
+  brew update
 
   # 命令行工具列表
   local cli_tools=(
@@ -141,26 +167,30 @@ main() {
     "font-fira-code-nerd-font"
     "font-jetbrains-mono-nerd-font"
     "font-lxgw-wenkai"
-    "fd"
-    "eza"
-    "curl"
-    "wget"
-    "fzf"
     "bat"
+    "ca-certificates"
+    "curl"
+    "eza"
+    "wget"
+    "fd"
+    "fzf"
+    "git"
+    "git-lfs"
+    "htop"
     "tree"
     "tlrc"
     "tmux"
     "tmux-mem-cpu-load"
-    "ca-certificates"
-    "git-lfs"
-    "htop"
+    "upx"
     "pyenv"
     "ripgrep"
   )
 
   # 图形界面应用列表（cask）
   local casks=(
+    "google-chrome"
     "iterm2"
+    "orbstack"
     "itsycal"
     "clipy"
     "rectangle"
@@ -174,16 +204,19 @@ main() {
     "pixpin"
     "wechat"
     "utools"
+    "jordanbaird-ice"
   )
 
   # 安装命令行工具
   install_software "${cli_tools[@]}"
 
   # 安装图形界面应用
-  install_cask_software "${casks[@]}"
+  install_software "${casks[@]}"
 
   # 设置 zsh 和安装 zinit
   setup_zsh
+
+  setup_rime
 
   success "软件安装过程已完成。"
 }
