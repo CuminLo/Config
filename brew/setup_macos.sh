@@ -230,6 +230,25 @@ setup_nvm() {
   fi
 }
 
+setup_tmux() {
+  info "正在配置 .tmux.conf 文件..."
+
+  local tmux_url="https://raw.githubusercontent.com/CuminLo/Config/main/tmux/.tmux.conf"
+  local tmux_path="${HOME}/.tmux.conf" 
+
+  # todo...如果已存在则备份
+  if [ -f "$tmux_path" ]; then
+    return
+  fi
+  
+  info "正在从网络下载配置文件到 $tmux_path..."
+  if curl -fsSL -o "$tmux_path" "$tmux_url"; then
+    success "成功下载并设置 tmux 文件。"
+  else
+    error "下载 tmux 失败，请检查网络或 URL: $tmux_url"
+  fi
+}
+
 # --- 主函数 ---
 main() {
   # 脚本开始，请求一次 sudo 权限，延长会话有效期
@@ -279,6 +298,7 @@ main() {
   setup_pyenv
   setup_nvm
   setup_rime
+  setup_tmux
   # Zsh 设置放在最后，因为它会下载配置文件，可能会覆盖之前的设置
   setup_zsh
 
