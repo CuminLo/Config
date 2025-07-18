@@ -31,5 +31,3 @@ fi
 if command_exists thefuck; then
     eval $(thefuck --alias)
 fi
-
-export GOOGLE_CLOUD_PROJECT="exalted-kayak-464110-t7"
