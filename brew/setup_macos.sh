@@ -223,8 +223,11 @@ setup_nvm() {
   info "正在使用 nvm 安装 Node.js LTS 版本..."
   if nvm install --lts; then
     success "Node.js LTS 版本安装成功。"
-    info "正在安装全局 npm 包: @google/gemini-cli"
+
+    info "正在安装全局 npm 包"
+
     npm install -g @google/gemini-cli
+    npm install -g @anthropic-ai/claude-code
   else
     warn "nvm 安装 Node.js 失败。请在脚本结束后，打开新终端手动执行 'nvm install --lts'"
   fi
@@ -274,7 +277,7 @@ main() {
   local cli_tools=(
     "bat" "ca-certificates" "curl" "eza" "wget" "fd" "fzf" "git" "git-lfs"
     "htop" "openssl@3" "readline" "sqlite3" "tcl-tk@8" "tree" "tlrc" "tmux"
-    "tmux-mem-cpu-load" "upx" "ripgrep" "procs" "pyenv" "xz" "zlib"
+    "upx" "ripgrep" "procs" "pyenv" "xz" "zlib"
   )
   # 图形界面应用
   local casks=(
