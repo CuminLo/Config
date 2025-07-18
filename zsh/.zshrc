@@ -51,26 +51,27 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-rust
 
 zinit snippet OMZP::colored-man-pages
+zinit snippet OMZP::qrcode
 zinit snippet OMZP::git
 zinit snippet OMZP::docker
 zinit snippet OMZP::docker-compose
-zinit snippet OMZP::eza
 zinit snippet OMZP::z
 zinit snippet OMZP::brew
+zinit snippet OMZP::eza
 
 zinit snippet https://raw.githubusercontent.com/CuminLo/Config/main/zsh/alias.zsh
 
 # zinit light zdharma-continuum/fast-syntax-highlighting
 # zinit load zsh-users/zsh-completions
 
-zinit ice wait lucid && zinit light zsh-users/zsh-autosuggestions
+zinit ice wait lucid; zinit light zsh-users/zsh-autosuggestions
 
-zinit ice wait lucid && zinit light marlonrichert/zsh-autocomplete
+zinit ice wait lucid; zinit light marlonrichert/zsh-autocomplete
 
 # 语法高亮插件必须最后加载
-zinit ice wait lucid && zinit light zsh-users/zsh-syntax-highlighting
+zinit ice wait lucid; zinit light zsh-users/zsh-syntax-highlighting
 
-zinit ice wait lucid && zinit light Aloxaf/fzf-tab
+zinit ice wait lucid; zinit light Aloxaf/fzf-tab
 
 ### End of Zinit's installer chunk
 

@@ -10,8 +10,10 @@ export PATH="/opt/homebrew/opt/php@8.2/sbin:$PATH"
 
 #pyenv
 export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - zsh)"
+if command_exists pyenv; then
+    export PATH="$PYENV_ROOT/bin:$PATH"
+    eval "$(pyenv init - zsh)"
+fi
 
 #nvm
 export NVM_DIR="$HOME/.nvm"
