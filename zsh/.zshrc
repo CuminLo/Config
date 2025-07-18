@@ -50,12 +50,13 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-patch-dl \
     zdharma-continuum/zinit-annex-rust
 
+zinit load agkozak/zsh-z
+
 zinit snippet OMZP::colored-man-pages
 zinit snippet OMZP::qrcode
 zinit snippet OMZP::git
 zinit snippet OMZP::docker
 zinit snippet OMZP::docker-compose
-zinit snippet OMZP::z
 zinit snippet OMZP::brew
 zinit snippet OMZP::eza
 
