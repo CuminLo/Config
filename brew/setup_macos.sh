@@ -184,6 +184,7 @@ main() {
     "upx"
     "pyenv"
     "ripgrep"
+    "procs"
   )
 
   # 图形界面应用列表（cask）
