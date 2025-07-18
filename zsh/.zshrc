@@ -2,21 +2,9 @@
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 
-# ------------------------------------------------------------------------------
-# 历史记录设置 (History Settings)
-# ------------------------------------------------------------------------------
-HISTFILE=~/.zsh_history
-HISTSIZE=1000000000
-SAVEHIST=500000
-setopt APPEND_HISTORY       # 在会话之间追加历史，而不是覆盖
-setopt SHARE_HISTORY        # 在所有打开的终端之间立即共享历史
-setopt HIST_IGNORE_DUPS     # 忽略重复的命令
-setopt HIST_IGNORE_SPACE    # 忽略以空格开头的命令
-
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
@@ -32,6 +20,8 @@ autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
 zinit ice depth=1; zinit light romkatv/powerlevel10k
+
+zinit snippet https://raw.githubusercontent.com/CuminLo/Config/main/zsh/history.zsh
 
 # Load a few important annexes, without Turbo
 # (this is currently required for annexes)
