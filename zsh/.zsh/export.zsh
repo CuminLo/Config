@@ -1,33 +1,99 @@
-command_exists() { command -v "$1" >/dev/null 2>&1 }
+# ==============================================================================
+#  Zsh Configuration - Optimized
+# ==============================================================================
 
-# Homebrew
+# 帮助函数: 检查命令是否存在
+command_exists() {
+  command -v "$1" >/dev/null 2>&1
+}
+
+
+# ------------------------------------------------------------------------------
+# 1. Homebrew 核心配置
+# ------------------------------------------------------------------------------
+# 禁止 Homebrew 在执行命令时自动更新
 export HOMEBREW_NO_AUTO_UPDATE=1
+# 将 Homebrew 的主路径添加到 PATH 的最前面，确保优先使用 Homebrew 安装的工具
 export PATH="/opt/homebrew/bin:$PATH"
 
-# PHP
+
+# ------------------------------------------------------------------------------
+# 2. 编译环境变量 (LDFLAGS, CPPFLAGS, PKG_CONFIG_PATH)
+# ------------------------------------------------------------------------------
+# 为了让 `pip install` 或源码编译能找到 Homebrew 安装的库 (如 zlib, openssl)
+# 我们将多个库的路径合并到一行进行设置，避免冲突和覆盖
+
+# 编译器链接器标志，告诉编译器去哪里找库文件 (.lib, .so, .dylib)
+export LDFLAGS="-L/opt/homebrew/opt/zlib/lib"
+export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/tcl-tk@8/lib"
+export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/openssl/lib"
+
+# C/C++ 预处理器标志，告诉编译器去哪里找头文件 (.h)
+export CPPFLAGS="-I/opt/homebrew/opt/zlib/include"
+export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/tcl-tk@8/include"
+
+# pkg-config 工具的路径，帮助找到库的元信息
+export PKG_CONFIG_PATH="/opt/homebrew/opt/zlib/lib/pkgconfig"
+export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/homebrew/opt/tcl-tk@8/lib/pkgconfig"
+
+
+# ------------------------------------------------------------------------------
+# 3. 编程语言版本管理器 (NVM, pyenv)
+# ------------------------------------------------------------------------------
+# 版本管理器需要优先加载，因为它们会动态修改 PATH 来注入 "shims"（垫片），
+# 从而接管 `node`, `python` 等命令。
+
+# NVM (Node Version Manager)
+export NVM_DIR="$HOME/.nvm"
+# 检查 nvm.sh 脚本是否存在且非空，然后加载它
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+# 加载 nvm 的自动补全功能
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+# pyenv (Python Version Manager)
+export PYENV_ROOT="$HOME/.pyenv"
+if command_exists pyenv; then
+  # 将 pyenv 的可执行文件目录添加到 PATH
+  export PATH="$PYENV_ROOT/bin:$PATH"
+  # 初始化 pyenv，这会设置 shims 路径和自动补全
+  eval "$(pyenv init - zsh)"
+fi
+
+
+# ------------------------------------------------------------------------------
+# 4. 其他 Homebrew 安装的软件路径
+# ------------------------------------------------------------------------------
+# 将特定软件的路径也加入 PATH。
+# 注意：这些路径应该在版本管理器之后、在 Homebrew 主路径之前，
+# 但由于版本管理器会自动处理，我们在这里添加通常是安全的。
+
+# PHP@8.2
 export PATH="/opt/homebrew/opt/php@8.2/bin:$PATH"
 export PATH="/opt/homebrew/opt/php@8.2/sbin:$PATH"
 
-#pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-if command_exists pyenv; then
-    export PATH="$PYENV_ROOT/bin:$PATH"
-    eval "$(pyenv init - zsh)"
-fi
+# tcl-tk@8
+export PATH="/opt/homebrew/opt/tcl-tk@8/bin:$PATH"
 
-#nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-if command_exists procs; then
-    source <(procs --gen-completion-out zsh)
-fi
+# ------------------------------------------------------------------------------
+# 5. Shell 增强工具和别名
+# ------------------------------------------------------------------------------
 
+# fzf (Fuzzy Finder)
 if command_exists fzf; then
-    source <(fzf --zsh)
+  source <(fzf --zsh)
 fi
 
-if command_exists thefuck; then
-    eval $(thefuck --alias)
+# procs (a modern replacement for ps)
+if command_exists procs; then
+  source <(procs --gen-completion-out zsh)
 fi
+
+# The Fuck (corrects errors in previous console commands)
+if command_exists thefuck; then
+  eval $(thefuck --alias)
+fi
+
+# ==============================================================================
+#  End of Configuration
+# ==============================================================================
