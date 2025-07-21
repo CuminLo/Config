@@ -7,6 +7,8 @@ alias ls='eza --icons'
 alias la='eza -a --icons'
 alias ll='eza -al --icons --group-directories-first'
 
+alias code='trae'
+
 # 定义 update 函数
 update() {
     local original_dir=$(pwd)
