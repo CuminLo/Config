@@ -276,7 +276,7 @@ main() {
   # 命令行工具
   local cli_tools=(
     "bat" "ca-certificates" "curl" "eza" "wget" "fd" "fzf" "git" "git-lfs"
-    "htop" "openssl@3" "readline" "sqlite3" "tcl-tk@8" "tree" "tlrc" "tmux"
+    "htop" "openssl@3" "readline" "reattach-to-user-namespace" "sqlite3" "tcl-tk@8" "tree" "tlrc" "tmux"
     "upx" "ripgrep" "procs" "pyenv" "xz" "zlib"
   )
   # 图形界面应用
