@@ -52,6 +52,25 @@ zinit light-mode for \
 
 zinit load agkozak/zsh-z
 
+zinit ice lucid wait='0' atinit='zpcompinit'
+zinit light zdharma/fast-syntax-highlighting
+
+# 自动建议
+zinit ice lucid wait="0" atload='_zsh_autosuggest_start'
+zinit light zsh-users/zsh-autosuggestions
+
+# 补全
+zinit ice lucid wait='0'
+zinit light zsh-users/zsh-completions
+
+# 搜索
+zinit ice lucid wait='0'
+zinit light zsh-users/zsh-history-substring-search
+
+zi ice wait lucid id-as"go-command"
+zi snippet OMZP::golang
+
+
 zinit snippet OMZP::colored-man-pages
 zinit snippet OMZP::qrcode
 zinit snippet OMZP::git
@@ -59,6 +78,51 @@ zinit snippet OMZP::docker
 zinit snippet OMZP::docker-compose
 zinit snippet OMZP::brew
 zinit snippet OMZP::eza
+
+
+zinit snippet OMZP::git
+zinit snippet OMZP::svn
+zinit snippet OMZP::vscode
+zinit snippet OMZ::lib/completion.zsh
+zinit snippet OMZ::lib/history.zsh
+zinit snippet OMZ::lib/clipboard.zsh
+zinit snippet OMZ::lib/key-bindings.zsh
+zinit snippet OMZ::lib/theme-and-appearance.zsh
+zinit snippet OMZP::copypath
+zinit snippet OMZP::copyfile
+zinit snippet OMZP::copybuffer
+zinit snippet OMZP::brew
+zinit snippet OMZP::colored-man-pages
+zinit snippet OMZP::command-not-found
+
+
+export DOTNET_ROOT="/opt/homebrew/opt/dotnet/libexec"
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"
+eval "$(goenv init -)"
+export PATH="$GOROOT/bin:$PATH"
+export PATH="$PATH:$GOPATH/bin"
+
+export WINEPREFIX=~/.wine
+export VK_ICD_FILENAMES=/opt/homebrew/opt/vulkan-tools/lib/mock_icd/VkICD_mock_icd.json
+
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/opt/curl/bin:$PATH"
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+export PATH="/opt/homebrew/opt/libomp/bin:$PATH"
+export PATH="/opt/homebrew/opt/php@8.1/bin:$PATH"
+export PATH="/opt/homebrew/opt/php@8.1/sbin:$PATH"
+export PATH="$PATH:$HOME/.composer/vendor/bin"
+
+export PKG_CONFIG_PATH="/opt/homebrew/opt/curl/lib/pkgconfig:/opt/homebrew/opt/libffi/lib/pkgconfig:$PKG_CONFIG_PATH"
+export LDFLAGS="-L/opt/homebrew/opt/libffi/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/curl/lib -L/opt/homebrew/opt/libomp/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/libffi/include -I/opt/homebrew/opt/curl/include -I/opt/homebrew/opt/libomp/include -I/opt/homebrew/opt/libomp/include"
+
+export LDFLAGS="-L$(brew --prefix openssl)/lib -L$(brew --prefix readline)/lib -L$(brew --prefix sqlite3)/lib -L$(brew --prefix xz)/lib -L$(brew --prefix zlib)/lib -L$(brew --prefix tcl-tk)/lib ${LDFLAGS}"
+export CPPFLAGS="-I$(brew --prefix openssl)/include -I$(brew --prefix readline)/include -I$(brew --prefix sqlite3)/include -I$(brew --prefix xz)/include -I$(brew --prefix zlib)/include -I$(brew --prefix tcl-tk)/include ${CPPFLAGS}"
+export PKG_CONFIG_PATH="$(brew --prefix curl)/lib/pkgconfig:$(brew --prefix openssl)/lib/pkgconfig:$(brew --prefix readline)/lib/pkgconfig:$(brew --prefix sqlite3)/lib/pkgconfig:$(brew --prefix xz)/lib/pkgconfig:$(brew --prefix zlib)/lib/pkgconfig:$(brew --prefix tcl-tk)/lib/pkgconfig:${PKG_CONFIG_PATH}"
+
+
 
 zinit snippet https://raw.githubusercontent.com/CuminLo/Config/main/zsh/alias.zsh
 
