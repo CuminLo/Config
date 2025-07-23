@@ -275,9 +275,10 @@ main() {
   )
   # 命令行工具
   local cli_tools=(
+    "libffi" "libomp" "readline" "openssl@3" "tcl-tk@8" "xz" "zlib" "ncurses"
     "bat" "ca-certificates" "curl" "eza" "wget" "fd" "fzf" "git" "git-lfs"
-    "htop" "openssl@3" "readline" "reattach-to-user-namespace" "sqlite3" "tcl-tk@8" "tree" "tlrc" "tmux"
-    "upx" "ripgrep" "procs" "pyenv" "xz" "zlib"
+    "htop" "reattach-to-user-namespace" "sqlite3" "tree" "tlrc" "tmux"
+    "upx" "ripgrep" "procs" "pyenv" "jq"
   )
   # 图形界面应用
   local casks=(

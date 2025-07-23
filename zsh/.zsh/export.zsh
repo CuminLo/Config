@@ -1,12 +1,11 @@
 # ==============================================================================
-#  Zsh Configuration - Optimized
+#  Zsh Configuration
 # ==============================================================================
 
 # 帮助函数: 检查命令是否存在
 command_exists() {
   command -v "$1" >/dev/null 2>&1
 }
-
 
 # ------------------------------------------------------------------------------
 # 1. Homebrew 核心配置
@@ -16,26 +15,42 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 # 将 Homebrew 的主路径添加到 PATH 的最前面，确保优先使用 Homebrew 安装的工具
 export PATH="/opt/homebrew/bin:$PATH"
 
-
 # ------------------------------------------------------------------------------
 # 2. 编译环境变量 (LDFLAGS, CPPFLAGS, PKG_CONFIG_PATH)
 # ------------------------------------------------------------------------------
-# 为了让 `pip install` 或源码编译能找到 Homebrew 安装的库 (如 zlib, openssl)
-# 我们将多个库的路径合并到一行进行设置，避免冲突和覆盖
 
 # 编译器链接器标志，告诉编译器去哪里找库文件 (.lib, .so, .dylib)
 export LDFLAGS="-L/opt/homebrew/opt/zlib/lib"
-export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/tcl-tk@8/lib"
+export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/curl/lib"
 export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/openssl/lib"
+export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/libffi/lib"
+export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/libomp/lib"
+export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/readline/lib"
+export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/sqlite3/lib"
+export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/xz/lib"
+export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/ncurses/lib"
+export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/tcl-tk@8/lib"
 
 # C/C++ 预处理器标志，告诉编译器去哪里找头文件 (.h)
 export CPPFLAGS="-I/opt/homebrew/opt/zlib/include"
+export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/curl/include"
+export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/libffi/include"
+export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/libomp/include"
+export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/readline/include"
+export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/sqlite3/include"
+export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/xz/include"
+export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/ncurses/include"
 export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/tcl-tk@8/include"
 
 # pkg-config 工具的路径，帮助找到库的元信息
 export PKG_CONFIG_PATH="/opt/homebrew/opt/zlib/lib/pkgconfig"
+export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/homebrew/opt/curl/lib/pkgconfig"
+export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/homebrew/opt/openssl/lib/pkgconfig"
+export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/homebrew/opt/readline/lib/pkgconfig"
+export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/homebrew/opt/sqlite3/lib/pkgconfig"
+export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/homebrew/opt/xz/lib/pkgconfig"
+export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/homebrew/opt/ncurses/lib/pkgconfig"
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/homebrew/opt/tcl-tk@8/lib/pkgconfig"
-
 
 # ------------------------------------------------------------------------------
 # 3. 编程语言版本管理器 (NVM, pyenv)
@@ -67,12 +82,19 @@ fi
 # 注意：这些路径应该在版本管理器之后、在 Homebrew 主路径之前，
 # 但由于版本管理器会自动处理，我们在这里添加通常是安全的。
 
-# PHP@8.2
+# PHP
 export PATH="/opt/homebrew/opt/php@8.2/bin:$PATH"
 export PATH="/opt/homebrew/opt/php@8.2/sbin:$PATH"
+if command_exists composer; then
+  export PATH="$PATH:$HOME/.composer/vendor/bin"
+fi
 
 # tcl-tk@8
 export PATH="/opt/homebrew/opt/tcl-tk@8/bin:$PATH"
+
+export PATH="/opt/homebrew/opt/curl/bin:$PATH"
+
+export PATH="/opt/homebrew/opt/ncurses/bin:$PATH"
 
 
 # ------------------------------------------------------------------------------
