@@ -278,7 +278,7 @@ main() {
     "libffi" "libomp" "readline" "openssl@3" "tcl-tk@8" "xz" "zlib" "ncurses"
     "bat" "ca-certificates" "curl" "eza" "wget" "fd" "fzf" "git" "git-lfs"
     "htop" "reattach-to-user-namespace" "sqlite3" "tree" "tlrc" "tmux"
-    "upx" "ripgrep" "procs" "pyenv" "jq"
+    "upx" "ripgrep" "procs" "pyenv" "jq" "sshpass" "w3m"
   )
   # 图形界面应用
   local casks=(
