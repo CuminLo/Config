@@ -228,6 +228,7 @@ setup_nvm() {
 
     npm install -g @google/gemini-cli
     npm install -g @anthropic-ai/claude-code
+    npm install -g tunnelmole
   else
     warn "nvm 安装 Node.js 失败。请在脚本结束后，打开新终端手动执行 'nvm install --lts'"
   fi
@@ -278,7 +279,7 @@ main() {
     "libffi" "libomp" "readline" "openssl@3" "tcl-tk@8" "xz" "zlib" "ncurses"
     "bat" "ca-certificates" "curl" "eza" "wget" "fd" "fzf" "git" "git-lfs"
     "htop" "reattach-to-user-namespace" "sqlite3" "tree" "tlrc" "tmux"
-    "upx" "ripgrep" "procs" "pyenv" "jq" "sshpass" "w3m"
+    "upx" "ripgrep" "procs" "pyenv" "jq" "sshpass" "w3m" "rustscan"
   )
   # 图形界面应用
   local casks=(
