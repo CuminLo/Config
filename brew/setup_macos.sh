@@ -285,7 +285,7 @@ main() {
   local casks=(
     "google-chrome" "iterm2" "orbstack" "itsycal" "clipy" "rectangle"
     "visual-studio-code" "trae-cn" "tabby" "fork" "stats" "localsend"
-    "easydict" "pixpin" "wechat" "utools" "jordanbaird-ice" "skim"
+    "easydict" "pixpin" "wechat" "utools" "jordanbaird-ice" "skim" "motrix"
   )
 
   # 3. 执行安装
