@@ -89,6 +89,13 @@ if command_exists composer; then
   export PATH="$PATH:$HOME/.composer/vendor/bin"
 fi
 
+# goenv
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"
+if command_exists goenv; then
+  eval "$(goenv init -)"
+fi
+
 # tcl-tk@8
 export PATH="/opt/homebrew/opt/tcl-tk@8/bin:$PATH"
 
@@ -96,6 +103,7 @@ export PATH="/opt/homebrew/opt/curl/bin:$PATH"
 
 export PATH="/opt/homebrew/opt/ncurses/bin:$PATH"
 
+export OLLAMA_ORIGINS=chrome-extension://*
 
 # ------------------------------------------------------------------------------
 # 5. Shell 增强工具和别名
