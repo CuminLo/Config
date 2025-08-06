@@ -35,7 +35,7 @@ main() {
     local casks=(
         "google-chrome" "iterm2" "orbstack" "itsycal" "clipy" "rectangle"
         "visual-studio-code" "trae-cn" "tabby" "fork" "stats" "localsend"
-        "easydict" "pixpin" "wechat" "utools" "jordanbaird-ice" "skim" "motrix" "squirrel"
+        "easydict" "pixpin" "wechat" "utools" "jordanbaird-ice" "skim" "motrix" "squirrel" "folo"
     )
 
     # --- 根据参数决定安装行为 ---
