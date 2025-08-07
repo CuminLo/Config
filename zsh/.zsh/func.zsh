@@ -3,17 +3,17 @@ function claude-code() {
     for arg in "$@"; do
         case $arg in
             --ar)
-                //export ANTHROPIC_AUTH_TOKEN="sk-..."
+                # export ANTHROPIC_AUTH_TOKEN="sk-..."
                 export ANTHROPIC_BASE_URL="https://anyrouter.top"
                 shift # Remove the --ar argument
                 ;;
             --k2)
-                //export ANTHROPIC_AUTH_TOKEN="sk-..."
+                # export ANTHROPIC_AUTH_TOKEN="sk-..."
                 export ANTHROPIC_BASE_URL="https://api.moonshot.cn/anthropic/"
                 shift # Remove the --k2 argument
                 ;;
             --zp)
-                //export ANTHROPIC_AUTH_TOKEN="..."
+                # export ANTHROPIC_AUTH_TOKEN="..."
                 export ANTHROPIC_BASE_URL="https://open.bigmodel.cn/api/anthropic"
                 shift # Remove the --zp argument
                 ;;
