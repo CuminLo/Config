@@ -74,9 +74,9 @@ zinit ice wait lucid; zinit light Aloxaf/fzf-tab
 ### End of Zinit's installer chunk
 
 [ -f "$HOME/.zsh/export.zsh" ] && source "$HOME/.zsh/export.zsh"
+[ -f "$HOME/.zsh/func.zsh" ] && source "$HOME/.zsh/func.zsh"
 [ -f "$HOME/.zsh/key_export.zsh" ] && source "$HOME/.zsh/key_export.zsh"
 [ -f "$HOME/.local/bin/env" ] && source "$HOME/.local/bin/env"
-#[ -f "$HOME/.zsh/alias.zsh" ] && source "$HOME/.zsh/alias.zsh"
 
 # ------------------------------------------------------------------------------
 # Powerlevel10k 主题配置 (Theme Configuration)
