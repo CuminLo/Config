@@ -25,7 +25,7 @@ main() {
     # 命令行工具 (Formulae)
     local cli_tools=(
         "bat" "ca-certificates" "curl" "eza" "wget" "fd" "fzf" "git" "git-lfs" "htop"
-        "reattach-to-user-namespace" "sqlite3" "tree" "tlrc" "tmux" "upx" "ripgrep"
+        "sqlite3" "tree" "tlrc" "tmux" "upx" "ripgrep"
         "procs" "pyenv" "jq" "sshpass" "w3m" "rustscan" "glab"
         # 依赖库
         "libffi" "libomp" "readline" "openssl@3" "tcl-tk" "xz" "zlib" "ncurses"
