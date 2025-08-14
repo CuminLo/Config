@@ -96,6 +96,11 @@ if command_exists goenv; then
   eval "$(goenv init -)"
 fi
 
+# zoxide
+if command_exists zoxide; then
+  eval "$(zoxide init zsh)"
+fi
+
 # tcl-tk@8
 export PATH="/opt/homebrew/opt/tcl-tk@8/bin:$PATH"
 
