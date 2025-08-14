@@ -28,7 +28,7 @@ main() {
         "sqlite3" "tree" "tlrc" "tmux" "upx" "ripgrep"
         "procs" "pyenv" "jq" "sshpass" "w3m" "rustscan" "glab"
         # 依赖库
-        "libffi" "libomp" "readline" "openssl@3" "tcl-tk" "xz" "zlib" "ncurses"
+        "libffi" "libomp" "readline" "openssl" "tcl-tk" "xz" "zlib" "ncurses"
     )
 
     # 图形界面应用 (Casks)

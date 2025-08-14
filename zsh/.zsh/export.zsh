@@ -34,6 +34,7 @@ export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/tcl-tk/lib"
 # C/C++ 预处理器标志，告诉编译器去哪里找头文件 (.h)
 export CPPFLAGS="-I/opt/homebrew/opt/zlib/include"
 export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/curl/include"
+export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/openssl/include/openssl"
 export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/libffi/include"
 export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/libomp/include"
 export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/readline/include"
@@ -102,7 +103,7 @@ if command_exists zoxide; then
 fi
 
 # tcl-tk@8
-export PATH="/opt/homebrew/opt/tcl-tk@8/bin:$PATH"
+export PATH="/opt/homebrew/opt/tcl-tk/bin:$PATH"
 
 export PATH="/opt/homebrew/opt/curl/bin:$PATH"
 
