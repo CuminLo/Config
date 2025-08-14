@@ -29,7 +29,7 @@ export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/readline/lib"
 export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/sqlite3/lib"
 export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/xz/lib"
 export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/ncurses/lib"
-export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/tcl-tk@8/lib"
+export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/tcl-tk/lib"
 
 # C/C++ 预处理器标志，告诉编译器去哪里找头文件 (.h)
 export CPPFLAGS="-I/opt/homebrew/opt/zlib/include"
@@ -40,7 +40,7 @@ export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/readline/include"
 export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/sqlite3/include"
 export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/xz/include"
 export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/ncurses/include"
-export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/tcl-tk@8/include"
+export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/tcl-tk/include"
 
 # pkg-config 工具的路径，帮助找到库的元信息
 export PKG_CONFIG_PATH="/opt/homebrew/opt/zlib/lib/pkgconfig"
@@ -50,7 +50,7 @@ export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/homebrew/opt/readline/lib/pkgconfi
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/homebrew/opt/sqlite3/lib/pkgconfig"
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/homebrew/opt/xz/lib/pkgconfig"
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/homebrew/opt/ncurses/lib/pkgconfig"
-export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/homebrew/opt/tcl-tk@8/lib/pkgconfig"
+export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/homebrew/opt/tcl-tk/lib/pkgconfig"
 
 # ------------------------------------------------------------------------------
 # 3. 编程语言版本管理器 (NVM, pyenv)
