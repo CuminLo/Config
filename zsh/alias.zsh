@@ -6,7 +6,6 @@ alias cat='bat --paging=never'
 alias ls='eza --icons'
 alias la='eza -a --icons'
 alias ll='eza -al --icons --group-directories-first'
-
 alias code='trae'
 
 # 定义 update 函数
@@ -20,6 +19,16 @@ update() {
     fi
     if [ -d "$HOME/Library/Rime" ]; then
         cd "$HOME/Library/Rime" && git pull -r
+    fi
+    cd "$original_dir"
+}
+
+goenv_update() {
+    local original_dir=$(pwd)
+    if command_exists goenv; then
+        cd ~/.goenv && git pull -r
+        go version
+        goenv install -l | tail -n 1
     fi
     cd "$original_dir"
 }
