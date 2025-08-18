@@ -61,7 +61,7 @@ zinit snippet OMZP::copyfile
 zinit snippet OMZP::copybuffer
 zinit snippet OMZP::qrcode
 zinit snippet OMZP::git
-zinit snippet OMZP::docker
+#zinit snippet OMZP::docker
 zinit snippet OMZP::docker-compose
 zinit snippet OMZP::brew
 zinit snippet OMZP::eza
