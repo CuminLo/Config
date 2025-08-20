@@ -1,13 +1,153 @@
 {
-  "editor.wordWrap": "on",
-  "redhat.telemetry.enabled": true,
-  "files.autoSave": "onFocusChange",
-  "editor.fontSize": 14,
-  "workbench.editor.wrapTabs": true,
-  "editor.fontFamily": "'JetBrainsMono Nerd Font', 'JetBrains Maple Mono', 'JetBrains Mono', Menlo, Monaco, 'Courier New', monospace",
-  "editor.fontLigatures": true,
-  "php.suggest.basic": false,
-  "[php]": {
-
-  }
+    "redhat.telemetry.enabled": true,
+    "window.nativeTabs": true,
+    "window.zoomLevel": -1,
+    "workbench.colorTheme": "One Dark Pro",
+    "workbench.iconTheme": "vscode-great-icons",
+    "workbench.tree.indent": 20,
+    "workbench.commandPalette.history": 20,
+    "workbench.editor.defaultBinaryEditor": "hexEditor.hexedit",
+    "workbench.editor.enablePreviewFromCodeNavigation": true,
+    "workbench.editor.enablePreviewFromQuickOpen": true,
+    "workbench.editor.highlightModifiedTabs": true,
+    "workbench.editor.wrapTabs": true,
+    "workbench.editor.empty.hint": "hidden",
+    "workbench.settings.applyToAllProfiles": [
+        "window.zoomLevel"
+    ],
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "terminal.integrated.fontFamily": "monospace",
+    "terminal.integrated.fontSize": 14,
+    "editor.formatOnSave": true,
+    "editor.fontFamily": "'JetBrainsMono Nerd Font', 'JetBrains Maple Mono', 'JetBrains Mono', Menlo, Monaco, 'Courier New', 'MiSans L3', monospace",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 14,
+    "editor.wordWrap": "on",
+    "editor.rulers": [
+        88,
+        120
+    ],
+    "editor.largeFileOptimizations": false,
+    "editor.guides.bracketPairs": "active",
+    "editor.cursorStyle": "line",
+    "editor.lineNumbers": "on",
+    "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+    "editor.accessibilitySupport": "off",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.wordWrapColumn": 120,
+    "editor.tabCompletion": "onlySnippets",
+    "editor.linkedEditing": true,
+    "editor.stickyScroll.enabled": true,
+    "editor.tabSize": 4,
+    "editor.insertSpaces": false,
+    "editor.renderWhitespace": "all",
+    "editor.minimap.renderCharacters": false,
+    "editor.minimap.size": "fill",
+    "editor.quickSuggestions": {
+        "strings": true
+    },
+    "editor.suggest.showWords": true,
+    "files.eol": "\n",
+    "files.autoSave": "onWindowChange",
+    "window.titleBarStyle": "custom",
+    "diffEditor.ignoreTrimWhitespace": true,
+    "local-history.absolute": true,
+    "local-history.path": "/tmp",
+    "local-history.daysLimit": 30,
+    "local-history.maxDisplay": 500,
+    "local-history.saveDelay": 10,
+    "vim.easymotion": true,
+    "vim.useSystemClipboard": true,
+    "vim.hlsearch": true,
+    "vim.incsearch": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "j",
+                "j"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        }
+    ],
+    "vim.leader": "<space>",
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-c>": false,
+        "<C-f>": false,
+        "<C-n>": false,
+        "<C-d>": true,
+    },
+    "todo-tree.general.tags": [
+        "BUG",
+        "HACK",
+        "FIXME",
+        "TODO",
+        "XXX",
+        "Todo"
+    ],
+    "security.workspace.trust.untrustedFiles": "open",
+    "codeium.enableConfig": {
+        "*": false,
+        "markdown": true
+    },
+    "settingsSync.ignoredSettings": [
+        "-window.zoomLevel"
+    ],
+    "php.suggest.basic": false,
+    "php-docblocker.alignParams": true,
+    "php-docblocker.alignReturn": true,
+    "phpcs.standard": "PSR12",
+    "php-cs-fixer.onsave": true,
+    "php-cs-fixer.config": ".php-cs-fixer.php;.php-cs-fixer.dist.php;.php_cs;.php_cs.dist",
+    "php-cs-fixer.rules": "@PSR12",
+    "[php]": {
+        "editor.defaultFormatter": "junstyle.php-cs-fixer",
+        "editor.formatOnSave": true,
+        "files.autoSave": "afterDelay",
+        "files.autoSaveDelay": 2000
+    },
+    "python.languageServer": "Pylance",
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true,
+        "files.autoSave": "afterDelay",
+        "files.autoSaveDelay": 2000,
+        "editor.codeActionsOnSave": {
+            "source.fixAll": "explicit",
+            "source.organizeImports": "never",
+            "source.organizeImports.ruff": "explicit"
+        },
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4,
+        "editor.formatOnType": false,
+    },
+    "gopls": {
+        "ui.semanticTokens": true,
+        "ui.completion.usePlaceholders": true
+    },
+    "go.toolsManagement.autoUpdate": true,
+    "go.vetOnSave": "package",
+    "go.formatTool": "goimports",
+    "go.lintTool": "golangci-lint",
+    "[go]": {
+        "editor.defaultFormatter": "golang.go",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        }
+    },
+    "[go.mod]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        }
+    },
+    "parallels-desktop.extension.path": "/Users/cumin/.parallels-desktop-vscode",
+    "parallels-desktop.prlctl.path": "/usr/local/bin/prlctl",
+    "parallels-desktop.brew.path": "/opt/homebrew/bin/brew",
+    "parallels-desktop.git.path": "/opt/homebrew/bin/git",
+    "makefile.configureOnOpen": true,
 }
