@@ -12,8 +12,11 @@ command_exists() {
 # ------------------------------------------------------------------------------
 # 禁止 Homebrew 在执行命令时自动更新
 export HOMEBREW_NO_AUTO_UPDATE=1
+
 # 将 Homebrew 的主路径添加到 PATH 的最前面，确保优先使用 Homebrew 安装的工具
 export PATH="/opt/homebrew/bin:$PATH"
+
+export PATH="$HOME/.local/bin:$PATH"
 
 # ------------------------------------------------------------------------------
 # 2. 编译环境变量 (LDFLAGS, CPPFLAGS, PKG_CONFIG_PATH)
