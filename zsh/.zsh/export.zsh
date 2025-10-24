@@ -18,6 +18,8 @@ export PATH="/opt/homebrew/bin:$PATH"
 
 export PATH="$HOME/.local/bin:$PATH"
 
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+
 # ------------------------------------------------------------------------------
 # 2. 编译环境变量 (LDFLAGS, CPPFLAGS, PKG_CONFIG_PATH)
 # ------------------------------------------------------------------------------
@@ -33,6 +35,7 @@ export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/sqlite3/lib"
 export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/xz/lib"
 export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/ncurses/lib"
 export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/tcl-tk/lib"
+export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/mysql-client/lib"
 
 # C/C++ 预处理器标志，告诉编译器去哪里找头文件 (.h)
 export CPPFLAGS="-I/opt/homebrew/opt/zlib/include"
@@ -45,6 +48,7 @@ export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/sqlite3/include"
 export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/xz/include"
 export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/ncurses/include"
 export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/tcl-tk/include"
+export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/mysql-client/include"
 
 # pkg-config 工具的路径，帮助找到库的元信息
 export PKG_CONFIG_PATH="/opt/homebrew/opt/zlib/lib/pkgconfig"
@@ -77,7 +81,6 @@ if command_exists pyenv; then
   # 初始化 pyenv，这会设置 shims 路径和自动补全
   eval "$(pyenv init - zsh)"
 fi
-
 
 # ------------------------------------------------------------------------------
 # 4. 其他 Homebrew 安装的软件路径
