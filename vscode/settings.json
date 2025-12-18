@@ -78,7 +78,7 @@
         "<C-c>": false,
         "<C-f>": false,
         "<C-n>": false,
-        "<C-d>": true,
+        "<C-d>": true
     },
     "todo-tree.general.tags": [
         "BUG",
@@ -109,7 +109,6 @@
         "files.autoSave": "afterDelay",
         "files.autoSaveDelay": 2000
     },
-    "python.languageServer": "Pylance",
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter",
         "editor.formatOnSave": true,
@@ -122,7 +121,7 @@
         },
         "editor.insertSpaces": true,
         "editor.tabSize": 4,
-        "editor.formatOnType": false,
+        "editor.formatOnType": false
     },
     "gopls": {
         "ui.semanticTokens": true,
@@ -145,9 +144,24 @@
             "source.organizeImports": "explicit"
         }
     },
-    "parallels-desktop.extension.path": "/Users/cumin/.parallels-desktop-vscode",
-    "parallels-desktop.prlctl.path": "/usr/local/bin/prlctl",
-    "parallels-desktop.brew.path": "/opt/homebrew/bin/brew",
-    "parallels-desktop.git.path": "/opt/homebrew/bin/git",
-    "makefile.configureOnOpen": true,
+    "chat.instructionsFilesLocations": {
+        ".github/instructions": true,
+        "/var/folders/6x/2r5z95v571q5tdn85p30xwqw0000gn/T/postman-collections-post-response.instructions.md": true,
+        "/var/folders/6x/2r5z95v571q5tdn85p30xwqw0000gn/T/postman-collections-pre-request.instructions.md": true,
+        "/var/folders/6x/2r5z95v571q5tdn85p30xwqw0000gn/T/postman-folder-post-response.instructions.md": true,
+        "/var/folders/6x/2r5z95v571q5tdn85p30xwqw0000gn/T/postman-folder-pre-request.instructions.md": true,
+        "/var/folders/6x/2r5z95v571q5tdn85p30xwqw0000gn/T/postman-http-request-post-response.instructions.md": true,
+        "/var/folders/6x/2r5z95v571q5tdn85p30xwqw0000gn/T/postman-http-request-pre-request.instructions.md": true
+    },
+    "application.shellEnvironmentResolutionTimeout": 30,
+    "[dockercompose]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "advanced",
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[github-actions-workflow]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "workbench.editor.languageDetection": false
 }
