@@ -60,6 +60,8 @@ export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/homebrew/opt/xz/lib/pkgconfig"
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/homebrew/opt/ncurses/lib/pkgconfig"
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/homebrew/opt/tcl-tk/lib/pkgconfig"
 
+export DOTNET_ROOT="/opt/homebrew/opt/dotnet/libexec"
+
 # ------------------------------------------------------------------------------
 # 3. 编程语言版本管理器 (NVM, pyenv)
 # ------------------------------------------------------------------------------
