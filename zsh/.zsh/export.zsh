@@ -20,6 +20,9 @@ export PATH="$HOME/.local/bin:$PATH"
 
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 
+# Added by Antigravity
+export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
+
 # ------------------------------------------------------------------------------
 # 2. 编译环境变量 (LDFLAGS, CPPFLAGS, PKG_CONFIG_PATH)
 # ------------------------------------------------------------------------------
@@ -72,8 +75,16 @@ export DOTNET_ROOT="/opt/homebrew/opt/dotnet/libexec"
 export NVM_DIR="$HOME/.nvm"
 # 检查 nvm.sh 脚本是否存在且非空，然后加载它
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
 # 加载 nvm 的自动补全功能
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+# bun completions
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
 
 # pyenv (Python Version Manager)
 export PYENV_ROOT="$HOME/.pyenv"
@@ -141,3 +152,4 @@ fi
 # ==============================================================================
 #  End of Configuration
 # ==============================================================================
+
