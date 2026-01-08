@@ -31,7 +31,6 @@ fi
 # }
 
 tldr_update() {
-    tldr --clean-cache
     tldr --update
 }
 
