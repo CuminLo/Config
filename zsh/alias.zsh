@@ -37,7 +37,7 @@ tldr_update() {
 # 定义 update 函数
 update() {
     local original_dir=$(pwd)
-    brew update && brew outdate
+    brew update && brew outdated
     brew upgrade
     tldr_update
     cd "$original_dir"
