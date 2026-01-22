@@ -1,0 +1,51 @@
+#!/bin/bash
+
+# Service Name
+SERVICE_NAME="com.mihomo.daemon"
+PLIST_PATH="/Library/LaunchDaemons/$SERVICE_NAME.plist"
+LOG_FILE="/tmp/mihomo.log"
+
+function start() {
+    echo "Starting $SERVICE_NAME..."
+    # Note: LaunchDaemons require sudo to load/unload
+    launchctl load "$PLIST_PATH"
+    echo "Service loaded. Check status with: sudo launchctl list | grep mihomo"
+}
+
+function stop() {
+    echo "Stopping $SERVICE_NAME..."
+    launchctl unload "$PLIST_PATH"
+    echo "Service unloaded."
+}
+
+function restart() {
+    echo "Restarting $SERVICE_NAME..."
+    launchctl unload "$PLIST_PATH"
+    sleep 1
+    launchctl load "$PLIST_PATH"
+    echo "Restart complete."
+}
+
+function log() {
+    echo "Tailing log file: $LOG_FILE"
+    tail -f "$LOG_FILE"
+}
+
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    restart)
+        restart
+        ;;
+    log)
+        log
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|restart|log}"
+        exit 1
+        ;;
+esac

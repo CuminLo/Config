@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.mihomo.daemon</string>
+    <key>Program</key>
+    <string>/Users/cumin/.config/clash/config/clash.meta</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/cumin/.config/clash/config/clash.meta</string>
+        <string>-f</string>
+        <string>/Users/cumin/.config/clash/config/config.yaml</string>
+        <string>-d</string>
+        <string>/Users/cumin/.config/clash/config</string>
+    </array>
+    <key>StandardOutPath</key>
+    <string>/tmp/mihomo.log</string>
+    <key>StandardErrorPath</key>
+    <string>/tmp/mihomo.log</string>
+    <key>RunAtLoad</key>
+    <false/>
+    <key>KeepAlive</key>
+    <true/>
+    <key>UserName</key>
+    <string>root</string>
+</dict>
+</plist>
