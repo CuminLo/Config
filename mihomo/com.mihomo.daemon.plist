@@ -14,10 +14,6 @@
         <string>-d</string>
         <string>/Users/cumin/.config/clash/config</string>
     </array>
-    <key>StandardOutPath</key>
-    <string>/tmp/mihomo.log</string>
-    <key>StandardErrorPath</key>
-    <string>/tmp/mihomo.log</string>
     <key>RunAtLoad</key>
     <false/>
     <key>KeepAlive</key>
