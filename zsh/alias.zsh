@@ -40,6 +40,7 @@ update() {
     brew update && brew outdated
     brew upgrade
     tldr_update
+    zinit self-update
     cd "$original_dir"
 }
 
