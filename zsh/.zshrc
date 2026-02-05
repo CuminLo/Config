@@ -82,3 +82,5 @@ zinit ice wait lucid; zinit light Aloxaf/fzf-tab
 # ------------------------------------------------------------------------------
 # 必须放在最后
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+ulimit -n 65535
