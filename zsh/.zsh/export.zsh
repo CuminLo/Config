@@ -98,6 +98,7 @@ fi
 
 # rust
 export PATH="/opt/homebrew/opt/rustup/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # ------------------------------------------------------------------------------
 # 4. 其他 Homebrew 安装的软件路径
@@ -151,6 +152,11 @@ fi
 # The Fuck (corrects errors in previous console commands)
 if command_exists thefuck; then
   eval $(thefuck --alias)
+fi
+
+# ZeroClaw
+if command_exists zeroclaw; then
+    source <(zeroclaw completions zsh)
 fi
 
 # ==============================================================================
