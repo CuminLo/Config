@@ -114,6 +114,12 @@
     "go.vetOnSave": "package",
     "go.formatTool": "goimports",
     "go.lintTool": "golangci-lint",
+    "[json]": {
+        "editor.formatOnSave": false,
+    },
+    "[jsonc]": {
+        "editor.formatOnSave": false,
+    },
     "[go]": {
         "editor.tabSize": 4,
         "editor.insertSpaces": false,
@@ -142,6 +148,7 @@
         "editor.formatOnSave": true,
     },
     "[yaml]": {
+        "editor.formatOnSave": false,
         "editor.insertSpaces": true,
         "editor.tabSize": 2,
         "editor.autoIndent": "advanced",
@@ -157,9 +164,56 @@
         "editor.defaultFormatter": "redhat.vscode-yaml"
     },
     "application.shellEnvironmentResolutionTimeout": 30,
-    "agq.pinnedModels": [
-        "MODEL_PLACEHOLDER_M8",
-        "MODEL_PLACEHOLDER_M12"
+    "editor.inlayHints.enabled": "on",
+    "php.problems.excludeGitIgnore": true,
+    "php.problems.exclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/*/**": true,
+        "**/vendor/**": true,
+        "**/runtime/**": true
+    },
+    "cSpell.ignoreWords": [
+        "aliexpress",
+        "opencode",
+        "multimodal",
+        "ultrabrain",
+        "Swoole",
+        "Hyperf",
+        "huochacha",
+        "litellm",
+        "Laravel",
+        "analyse",
+        "Aftersale",
+        "openspec",
+        "mgrep",
+        "modelcontextprotocol",
+        "tinyint",
+        "kimi",
+        "Swow",
+        "skus",
+        "shein",
+        "uids",
+        "setex",
+        "Phpdoc",
+        "Precheck",
+        "varchar",
+        "Vtiful",
+        "worktree",
+        "Westmonth",
+        "winitb",
+        "wechat",
+        "winita",
+        "Outbounds",
+        "estp",
+        "xizhiyue",
+        "yuanpeng",
+        "mihomo",
+        "immortalwrt"
     ],
-    "editor.inlayHints.enabled": "on"
+    "php.format.rules.indentBraces": false,
+    "php.files.exclude": {
+        "**/.git/objects/**": true,
+        "**/runtime/**": true
+    }
 }

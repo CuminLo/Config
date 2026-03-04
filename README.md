@@ -1,6 +1,6 @@
 # ⚙️ 个人环境自动化配置脚本
 
-欢迎使用！这是一个包含了我的个人配置文件（dotfiles）和一系列自动化脚本的仓库，旨在帮助你快速搭建一个舒适、高效的 macOS 开发环境。
+个人配置文件（dotfiles）和一系列自动化脚本的仓库
 
 ## 🚀 如何使用
 
@@ -23,8 +23,6 @@ make all
 - `make brew`: 安装 Homebrew 包管理器。
 - `make fonts`: 安装开发和终端所需的字体。
 - `make zsh`: 配置 Zsh，让你的终端更好用。
-- `make pyenv`: 配置 Pyenv，轻松管理 Python 版本。
-- `make nvm`: 配置 NVM，轻松管理 Node.js 版本。
 - `make rime`: 配置强大的 Rime 输入法。
 
 ### 📦 灵活的应用安装

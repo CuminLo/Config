@@ -66,35 +66,12 @@ export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/homebrew/opt/mysql-client/lib/pkgc
 
 export DOTNET_ROOT="/opt/homebrew/opt/dotnet/libexec"
 
-# ------------------------------------------------------------------------------
-# 3. 编程语言版本管理器 (NVM, pyenv)
-# ------------------------------------------------------------------------------
-# 版本管理器需要优先加载，因为它们会动态修改 PATH 来注入 "shims"（垫片），
-# 从而接管 `node`, `python` 等命令。
-
-# NVM (Node Version Manager)
-export NVM_DIR="$HOME/.nvm"
-# 检查 nvm.sh 脚本是否存在且非空，然后加载它
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-
-# 加载 nvm 的自动补全功能
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
 # bun completions
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-
-# pyenv (Python Version Manager)
-export PYENV_ROOT="$HOME/.pyenv"
-if command_exists pyenv; then
-  # 将 pyenv 的可执行文件目录添加到 PATH
-  export PATH="$PYENV_ROOT/bin:$PATH"
-  # 初始化 pyenv，这会设置 shims 路径和自动补全
-  eval "$(pyenv init - zsh)"
-fi
 
 # rust
 export PATH="/opt/homebrew/opt/rustup/bin:$PATH"

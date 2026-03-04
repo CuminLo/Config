@@ -27,7 +27,7 @@ main() {
         "bat" "boxes" "ca-certificates" "curl" "duf" "ncdu" "eza" "wget" "fd" "fzf" "git" "git-lfs" "htop" "zoxide"
         "goenv"
         "sqlite3" "tree" "tlrc" "tmux" "upx" "ripgrep"
-        "procs" "pidof" "pyenv" "jq" "sshpass" "w3m" "rustscan" "glab"
+        "procs" "pidof" "uv" "jq" "sshpass" "w3m" "rustscan" "glab"
         # 依赖库
         "libffi" "libomp" "readline" "openssl" "tcl-tk" "xz" "zlib" "ncurses"
     )

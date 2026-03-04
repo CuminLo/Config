@@ -1,7 +1,7 @@
 # Define all scripts in the init directory
 INIT_SCRIPTS = $(wildcard init/*.sh)
 
-.PHONY: all brew fonts apps zsh pyenv nvm rime permissions
+.PHONY: all brew fonts apps zsh rime permissions
 
 permissions:
 	@echo "Setting execute permissions for init scripts..."
@@ -22,15 +22,9 @@ apps: permissions
 zsh: permissions
 	@bash init/04_setup_zsh.sh
 
-pyenv: permissions
-	@bash init/05_setup_pyenv.sh
-
-nvm: permissions
-	@bash init/06_setup_nvm.sh
-
 rime: permissions
 	@bash init/07_setup_rime.sh
 
 # The 'all' target will run the apps script without arguments
-all: permissions brew fonts zsh pyenv nvm rime
+all: permissions brew fonts zsh rime
 	@bash init/02_install_apps.sh
