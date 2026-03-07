@@ -7,12 +7,6 @@ alias ls='eza --icons'
 alias la='eza -a --icons'
 alias ll='eza -al --icons --group-directories-first'
 
-if command_exists agy; then
-    alias code='agy'
-elif command_exists trae; then
-    alias code='trae'
-fi
-
 # rime_update() {
 #     # --- 更新 Rime 設定 (如果目錄存在) ---
 #     local rime_dir="$HOME/Library/Rime"
