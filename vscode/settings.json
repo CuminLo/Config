@@ -215,5 +215,7 @@
     "php.files.exclude": {
         "**/.git/objects/**": true,
         "**/runtime/**": true
-    }
+    },
+    "git.confirmSync": false,
+    "workbench.iconTheme": "vscode-icons"
 }
